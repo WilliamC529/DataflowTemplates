@@ -13,7 +13,7 @@ jobs:
           distribution: 'temurin'
       - name: Test
         run: 
-          mvn -pl v2/pubsub-binary-to-bigquery test -Dtest=com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.testTimeColumn
+          mvn -pl v2/pubsub-binary-to-bigquery -am test -Dtest=com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.testTimeColumn
         
   Test_With_Nondex_Shuffling:
     runs-on: ubuntu-latest
@@ -26,4 +26,4 @@ jobs:
           distribution: 'temurin'
       - name: Test
         run: 
-          mvn -pl v2/pubsub-binary-to-bigquery edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.testTimeColumn
+          mvn -pl v2/pubsub-binary-to-bigquery -am edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.testTimeColumn
